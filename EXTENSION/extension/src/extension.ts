@@ -8,7 +8,9 @@ export function activate(context: vscode.ExtensionContext) {
 
 	// Use the console to output diagnostic information (console.log) and errors (console.error)
 	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "extension" is now active!');
+	console.log('welcome to "extension!!!"');
+	vscode.window.showInformationMessage('Welcome to extension!!!');
+
 
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with registerCommand
@@ -16,11 +18,33 @@ export function activate(context: vscode.ExtensionContext) {
 	let disposable = vscode.commands.registerCommand('extension.helloWorld', () => {
 		// The code you place here will be executed every time your command is executed
 		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from extension!');
+		// vscode.window.showInformationMessage('Welcome to extension!!!');
 	});
 
-	context.subscriptions.push(disposable);
+	let dispose = vscode.commands.registerCommand('alephzero.connectWallet', () => {
+        // Your code here to interact with the Aleph Zero Ecosystem
+    });
+
+    context.subscriptions.push(disposable);
+	context.subscriptions.push(dispose);
 }
+
+
+export function connect(){
+
+}
+
+export function disconnect(){
+
+}
+
 
 // This method is called when your extension is deactivated
 export function deactivate() {}
+
+
+
+
+
+
+
